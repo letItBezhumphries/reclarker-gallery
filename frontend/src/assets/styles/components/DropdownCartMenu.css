@@ -1,0 +1,216 @@
+
+
+.dropdown-menu {
+  display: none;
+  background-color: #343a40;
+  
+  /* left: -22rem; */
+  /* min-width: 400px; */
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+  text-align: left;
+  padding: 0 0;
+  margin: 0 0;
+}
+
+.dropdown-menu-cart {
+  display: none;
+    /* background-color: transparent; */
+  
+  /* left: -22rem; */
+  /* min-width: 400px; */
+  /* box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2); */
+  text-align: left;
+  padding: 0 0;
+  margin: 0 0;
+}
+
+
+
+
+
+
+/* to get rid of some weird background color applied to the anchor by default from bootstrap */
+/* className is dropdown-toggle nav-link */
+.dropdown-toggle {
+  -webkit-tap-highlight-color: transparent;
+}
+
+
+/*  to get rid of the icon for react bootstrap downloads */
+.dropdown-toggle::after {
+  display: none !important;
+}
+
+/* create a container for the cart-list */
+.cart-list-container {
+  min-width: 425px;
+  padding: 0 0;
+  margin: 0 0;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.dropdown-cart-list {
+  /* margin-bottom: 1.5rem; */
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  color: #9d9d9d;
+  font-weight: 400;
+  
+}
+
+.dropdown-cart-listItem {
+  list-style: none;
+  max-width: 100%;
+  max-height: 20rem;
+}
+
+.dropdown-cart-item {
+
+  font-family: "Open sans";
+  color: #9d9d9d;
+  letter-spacing: 1px;
+  text-decoration: none;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+}
+
+.dropdown-cart-item:hover a {
+  color: lighten(#9d9d9d, 15px);
+  text-decoration: none;
+}
+
+.dropdown-cart-item:hover img {
+  filter: brightness(1.1);
+}
+
+/* style for the other dropdown links */
+.dropdown-item {
+  color: #e5e5e5;
+}
+
+
+.dropdown-item-row {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  padding: 0 0;
+  width: 100%;
+  margin: 0 0;
+  
+}
+
+
+
+.dropdown-item-title {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  flex-wrap: nowrap;
+  font-size: 11px;
+  font-weight: 100;
+  width: 1fr;
+  margin-right: 1rem;
+  text-align: center;
+  padding: 0 0;  
+
+}
+
+
+.dropdown-item-title a:hover {
+  color: #ff4da6;
+}
+
+
+.dropdown-item-title a {
+  color: lightgray;
+}
+
+/* .dropdown-item-title:hover a {
+  color: lighten(white, 15px);
+} */
+
+
+
+.dropdown-item-price {
+  height: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  font-size: 10px;
+  font-weight: 200;
+}
+
+.dropdown-cart-summary {
+  display: flex;
+  flex-direction: row;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+  flex: 0 0 60%;
+  
+}
+
+
+.dropdown-cart-item--header {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  padding: 0 0;
+  margin: 0 0;
+  background-color: inherit;
+}
+
+.dropdown-cart-total {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  font-size: larger;
+  font-family: "Comorant Garamond";
+  font-size: 15px;
+  font-weight: 400;
+  letter-spacing: 1px;
+  text-align: center;
+  color: #463636;
+  color: #e5e5e5;
+  padding-left: 5px;
+}
+
+
+.dropdown-cart-btn {
+  border-color: #000000;
+  color: #e5e5e5;
+  background-color: #303030;
+  text-decoration: none;
+  text-align: left;
+  font-size: 12px;
+  border: 2px solid #000000;
+  width: auto;
+  font-weight: 300;
+  white-space: nowrap;
+  cursor: pointer;
+  border-radius: 4px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.dropdown-cart-btn:hover {
+  text-decoration: none;
+}
+
+
+.dropdown-cart-btn:hover svg {
+  text-decoration: none;
+}
+
+.dropdown-cart-icon {
+  margin-left: 4px;
+}

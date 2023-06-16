@@ -1,0 +1,212 @@
+
+.scroller-background {
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 600px;
+  width: 100vw;
+  display: flex;
+  flex-direction: row;
+}
+
+.scroller-background-filter {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: row;
+  -webkit-backdrop-filter: blur(10px);
+  backdrop-filter: blur(10px); 
+  animation-name: brightenOnLoad;
+  animation-duration: 1s;
+  animation-timing-function: ease-in-out;
+}
+
+.left-col {
+  flex: 45%;
+  display: flex;
+  flex-direction: row;
+  margin: 0 0;
+  padding: 30px 30px;
+}
+
+.left-box {
+  width: 100%;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;  
+  align-items: center;
+}
+
+.left-iconbox {
+  flex: 15%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-end;
+}
+
+.artist-pic {
+  width: 60%;
+  box-shadow: 0 2.5rem 8rem rgba(black, .5);
+}
+
+
+.icon-left,
+.icon-right {
+  height: 2rem;
+  width: 2rem;
+  fill: transparent;
+}
+
+
+.left-iconbox:hover .icon-left {
+  fill: whitesmoke;
+  cursor: pointer;
+}
+
+
+.right-iconbox:hover .icon-right {
+  fill: whitesmoke;
+  cursor: pointer;
+}
+
+
+
+.right-col {
+  flex: 45%;
+  display: flex;
+  flex-direction: row;
+  margin: 0 0;
+  padding: 0 0;
+}
+
+.right-box {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.right-iconbox {
+  flex: 15%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+.text-box {
+  width: 100%;
+  flex: 70%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.text-box h1 {
+  align-self: center;
+  z-index: 1;
+}
+
+h1 a:hover {
+  text-decoration: none;
+  color: whitesmoke
+}
+
+.artist-heading {
+  /* background-color: brown; */
+  top: 11rem;
+  left: 1rem;
+  position: absolute;
+}
+
+.artist-name {
+  font-size: 54px;
+  line-height: 60px;
+  font-family: "Lato";
+  color: whitesmoke;
+  font-weight: 100;
+  text-align: center;
+}
+
+
+.artist-info-container {
+  z-index: 1;
+  margin-top: 1rem;
+}
+
+.artist-info-outline {
+  position: relative;
+  width: 40%;
+  height: 40%;
+  outline: 2.5rem solid whitesmoke;
+  outline-offset: 3rem;
+  opacity: .3;
+  align-self: center;
+  top: 6rem;
+}
+
+.artist-info-heading {
+  text-align: center;
+  font-size: 12.5px;
+  text-transform: capitalize;
+  letter-spacing: 1.01px;
+  color: whitesmoke;
+  font-weight: 100;
+  margin-bottom: 1rem;
+  opacity: 1;
+}
+
+
+.artist-info {
+  color: whitesmoke;
+  text-align: center;
+}
+
+.artist-info strong {
+  color: whitesmoke;
+  font-size: 1.5rem;
+  margin-right: 3px;
+}
+
+.follow-button-box {
+  flex: 3%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+}
+
+
+.follow-artist-button {
+  background-color: transparent;
+  color: #fff;
+  text-transform: uppercase;
+  font-family: "Lato";
+  font-weight: bold;  
+  letter-spacing: 1.2px;
+  border: 2px solid #fff;
+  height: 3.5rem;
+  padding: .5rem 1rem;
+  margin-left: 2rem;
+  width: 35%;
+}
+
+.follow-artist-button:hover {
+  background-color: #fff;
+  color: #131721;
+  transition: all .2s;
+}
+
+
+@keyframes brightenOnLoad {
+  0% {
+    -webkit-backdrop-filter: blur(15px) brightness(10%);
+    backdrop-filter: blur(15px) brightness(10%);
+  }
+
+  100% {
+    -webkit-backdrop-filter: blur(10px) brightness(80%);
+    backdrop-filter: blur(10px) brightness(80%);
+  }
+}

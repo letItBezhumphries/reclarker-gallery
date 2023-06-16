@@ -1,0 +1,67 @@
+.artist-list-searchbox {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 3rem;
+  font-size: 2rem;
+  padding: 10px 5rem;
+  width: 100%;
+  /* background-color: bisque; */
+}
+
+.search {
+  align-self: flex-start;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  /* background-color: bisque; */
+}
+
+.search-input {
+  font-size: 70%;
+  color: inherit;
+  background-color: var(--color-grey-light-2);
+  border: none;
+  padding: 0.7rem 2rem;
+  border-radius: 100px;
+  width: 80%;
+  transition: all 0.2s;
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+}
+
+.search-input:focus {
+  outline: none;
+  width: 100%;
+  background-color: var(--color-grey-light-3);
+}
+
+.search-input:focus+.search-button {
+  background-color: var(--color-grey-light-3);
+}
+
+.search-button {
+  background-color: var(--color-grey-light-2);
+  width: 3rem;
+  height: 3rem;
+  align-self: center;
+  border: none;
+  transform: translateX(-5.5rem);
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  padding-top: 10px;
+}
+
+.search-button:focus {
+  outline: none;
+}
+
+.search-icon {
+  height: 80%;
+  width: 80%;
+  fill: var(--color-grey-dark-3);
+  z-index: -1;
+}

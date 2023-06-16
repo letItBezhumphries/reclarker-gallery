@@ -1,0 +1,138 @@
+
+
+.searchbox-wrapper {
+  height: 100%;
+  width: 1fr;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 0px 0px;
+  flex: 1fr;
+}
+
+.link-wrapper {
+  height: 100%;
+  width: 1fr;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin-left: 1rem;
+  font-family: "Lato";
+  /* text-transform: uppercase; */
+  text-transform: capitalize;
+  background-color: transparent;
+  letter-spacing: 1.3px;
+  font-weight: 100;
+}
+
+.login-link {
+  height: 100%;
+  width: 5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  /* align-content: space-between; */
+  margin-left: 1rem;
+  font-family: "Lato";
+  /* text-transform: uppercase; */
+  text-transform: capitalize;
+  background-color: transparent;
+  letter-spacing: 1.3px;
+  font-weight: 100;
+  padding: 0 0;
+}
+
+.navlink-text-signin {
+  padding: 0 0;
+  margin-left: 6px;
+}
+
+.navlink-login {
+  height: 100%;
+  width: 100%;
+  margin: 0 0;
+  padding: 0 0;
+  display: flex;
+  justify-items: center;
+  align-items: center;
+}
+
+.profile-link-wrapper {
+  margin-left: 3rem;
+}
+
+.navlink {
+  display: flex;
+  flex-direction: row;
+  height: 7rem;
+  width: 1fr;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+
+
+.navlink-text {
+  font-family: "Lato";
+  /* text-transform: uppercase; */
+  text-transform: capitalize;
+  background-color: transparent;
+  letter-spacing: 1.3px;
+  font-weight: 100;
+}
+
+.navlink-icon {
+  margin-left: 5px;
+  margin-right: 6px;
+  z-index: 10;
+}
+
+/* .navlink span,
+.navlink i {
+  color:#ff4da6;
+} */
+
+.navlink:hover span,
+.navlink:hover i {
+  color: whitesmoke;
+}
+
+/* .nav-link {
+  font-family: "Lato";
+  text-transform:uppercase;
+  background-color: transparent;
+  letter-spacing: 1.3px;
+  font-weight: 100;
+} */
+
+/* Need to setup media queries and adjust the badge position if the screen shrinks */
+.nav-link-badge {
+  position: absolute;
+  right: -12px;
+  top: 35%;
+  border-radius: 100px;
+  height: 1.35rem;
+  width: 1.35rem;
+  text-align: center;
+  background: #ff4da6;
+  color: white;
+  z-index: 1;
+  justify-content: center;
+  align-items: center;
+}
+
+
+
+.nav-dropdown {
+  margin-left: 2rem;
+  margin-right: 1rem;
+  flex: 3;
+  height: 100%;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+

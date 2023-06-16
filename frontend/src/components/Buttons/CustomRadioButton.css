@@ -1,0 +1,45 @@
+.form-radio-group {
+  width: 49%;
+  display: inline-block;
+}
+
+.input-radio {
+  display: none;
+}
+
+.input-radio:checked ~ .input-label .input-radio-btn::after {
+  opacity: 1;
+}
+
+.input-label {
+  font-size: 1.6rem;
+  cursor: pointer;
+  position: relative;
+  padding-left: 4.5rem;
+}
+
+.input-radio-btn {
+  height: 3rem;
+  width: 3rem;
+  border: 5px solid blueviolet;
+  border-radius: 50%;
+  display: inline-block;
+  position: absolute;
+  left: 0;
+  top: -.4rem;
+}
+
+.input-radio-btn::after {
+  content: "";
+  display: block;
+  height: 1.3rem;
+  width: 1.3rem;
+  border-radius: 50%;
+  position: absolute; 
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: blueviolet;
+  opacity: 0;
+  transition: opacity .2s;
+}
