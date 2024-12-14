@@ -1,32 +1,32 @@
-const express = require("express");
-const S3 = require("aws-sdk/clients/s3");
-const multer = require("multer");
-const multerS3 = require("multer-s3");
-require("dotenv").config();
-const path = require("path");
+const express = require('express');
+const S3 = require('aws-sdk/clients/s3');
+const multer = require('multer');
+const multerS3 = require('multer-s3');
+require('dotenv').config();
+const path = require('path');
 
-const { protect, isAdmin } = require("../middleware/authMiddleware");
+const { protect, isAdmin } = require('../middleware/authMiddleware');
 
-const User = require("../models/User");
-const Artwork = require("../models/Artwork");
+const User = require('../models/User');
+const Artwork = require('../models/Artwork');
 
-const region = process.env.region;
-const bucketName = process.env.bucketName;
-const accessKeyId = process.env.accessKeyId;
-const secretAccessKey = process.env.secretAccessKey;
+const region = process.env.AWS_REGION;
+const bucketName = process.env.BUCKETNAME;
+const accessKeyId = process.env.ACCESS_KEY;
+const secretAccessKey = process.env.SECRET_KEY;
 
 const s3 = new S3({
   region,
   accessKeyId,
   secretAccessKey,
-  signatureVersion: "v4",
+  signatureVersion: 'v4',
 });
 
 const router = express.Router();
 
 const storage = multer.diskStorage({
   destination(req, file, cb) {
-    cb(null, "uploads/");
+    cb(null, 'uploads/');
   },
   filename(req, file, cb) {
     cb(
@@ -48,7 +48,7 @@ function checkFileType(file, callback) {
   if (extname && mimetype) {
     return callback(null, true);
   } else {
-    callback("Images only!");
+    callback('Images only!');
   }
 }
 
@@ -64,11 +64,11 @@ const uploadToS3 = multer({
     checkFileType(file, cb);
   },
   storage: multerS3({
-    acl: "public-read",
+    acl: 'public-read',
     s3,
     bucket: bucketName,
     metadata: function (req, file, callback) {
-      callback(null, { fieldName: "TESTING METADATA" });
+      callback(null, { fieldName: 'TESTING METADATA' });
     },
     key: function (req, file, callback) {
       callback(
@@ -80,16 +80,16 @@ const uploadToS3 = multer({
   }),
 });
 
-const singleUpload = uploadToS3.single("image");
+const singleUpload = uploadToS3.single('image');
 
 // /api/upload/:id
-router.post("/:id", upload.single("image"), (req, res) => {
-  console.log("in post request uploadImageRoutes the file:", req.file);
+router.post('/:id', upload.single('image'), (req, res) => {
+  console.log('in post request uploadImageRoutes the file:', req.file);
   res.send(`/${req.file.path}`);
 });
 
 // /api/upload/profile/:id
-router.post("/profile/:id", protect, (req, res) => {
+router.post('/profile/:id', protect, (req, res) => {
   const userId = req.params.id;
 
   singleUpload(req, res, function (err) {
@@ -97,7 +97,7 @@ router.post("/profile/:id", protect, (req, res) => {
       return res.json({
         success: false,
         errors: {
-          title: "Image Upload Error",
+          title: 'Image Upload Error',
           detail: err.message,
           error: err,
         },
@@ -106,7 +106,7 @@ router.post("/profile/:id", protect, (req, res) => {
 
     let update = { profilePicture: req.file.location };
 
-    console.log("in post uploadImageRountes req.file.location:", update);
+    console.log('in post uploadImageRountes req.file.location:', update);
 
     User.findByIdAndUpdate(userId, update, { new: true })
       .then((user) => res.status(200).json(user))

@@ -1,7 +1,7 @@
-import { createStore, combineReducers, applyMiddleware } from "redux";
-import thunk from "redux-thunk";
-import { composeWithDevTools } from "@redux-devtools/extension";
-import { cartReducer } from "./reducers/cartReducers.js";
+import { createStore, combineReducers, applyMiddleware } from 'redux';
+import thunk from 'redux-thunk';
+import { composeWithDevTools } from '@redux-devtools/extension';
+import { cartReducer } from './reducers/cartReducers.js';
 import {
   userLoginReducer,
   userRegisterReducer,
@@ -10,7 +10,7 @@ import {
   userListReducer,
   userDeleteReducer,
   userUpdateReducer,
-} from "./reducers/userReducers";
+} from './reducers/userReducers';
 import {
   orderCreateReducer,
   orderDetailsReducer,
@@ -18,7 +18,7 @@ import {
   orderDeliverReducer,
   orderListMyReducer,
   orderListReducer,
-} from "./reducers/orderReducers";
+} from './reducers/orderReducers';
 import {
   artworkListReducer,
   artworkDetailsReducer,
@@ -29,14 +29,14 @@ import {
   artworkRelatedListReducer,
   artworkCreateReviewReducer,
   artworkTopRatedReducer,
-} from "./reducers/artworkReducers";
+} from './reducers/artworkReducers';
 import {
   artistListReducer,
   artistDetailsReducer,
   artistsMostPopularReducer,
-} from "./reducers/artistReducers";
-import { exhibitListReducer } from "./reducers/exhibitionReducers";
-import { uploadReducer, uploadImageReducer } from "./reducers/uploadReducers";
+} from './reducers/artistReducers';
+import { exhibitListReducer } from './reducers/exhibitionReducers';
+import { uploadReducer, uploadImageReducer } from './reducers/uploadReducers';
 
 const reducer = combineReducers({
   cart: cartReducer,
@@ -70,23 +70,21 @@ const reducer = combineReducers({
   uploadImage: uploadImageReducer,
 });
 
-const cartItemsFromStorage = localStorage.getItem("cartItems")
-  ? JSON.parse(localStorage.getItem("cartItems"))
+const cartItemsFromStorage = localStorage.getItem('cartItems')
+  ? JSON.parse(localStorage.getItem('cartItems'))
   : [];
 
-const userInfoFromStorage = localStorage.getItem("userInfo")
-  ? JSON.parse(localStorage.getItem("userInfo"))
+const userInfoFromStorage = localStorage.getItem('userInfo')
+  ? JSON.parse(localStorage.getItem('userInfo'))
   : null;
 
-const shippingAddressFromStorage = localStorage.getItem("shippingAddress")
-  ? JSON.parse(localStorage.getItem("shippingAddress"))
+const shippingAddressFromStorage = localStorage.getItem('shippingAddress')
+  ? JSON.parse(localStorage.getItem('shippingAddress'))
   : {};
 
-const paymentMethodFromStorage = localStorage.getItem("paymentMethod")
-  ? JSON.parse(localStorage.getItem("paymentMethod"))
+const paymentMethodFromStorage = localStorage.getItem('paymentMethod')
+  ? JSON.parse(localStorage.getItem('paymentMethod'))
   : {};
-
-// console.log("in Store.js", userInfoFromStorage);
 
 const initialState = {
   cart: {
